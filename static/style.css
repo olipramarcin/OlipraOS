@@ -1,0 +1,64 @@
+*, body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: bold 14px/1.5;
+}
+input {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+input:focus {
+        outline: none;
+        caret-color: #fff;
+}
+#terminal {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 4px;
+    height: 95vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#output {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: rgb(81, 255, 0);
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space: pre-wrap;
+}
+#input {
+    margin-top: auto;
+}
+#kropki {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: left;
+    padding: 10px
+}
+#kropka1, #kropka2, #kropka3 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+#kropka1 {
+    background-color: #ff5f56;
+    cursor: pointer;
+}
+#kropka2 {
+    background-color: #ffbd2e;
+    cursor: pointer;
+}
+#kropka3 {
+    background-color: #27c93f;
+    cursor: pointer;
+}
