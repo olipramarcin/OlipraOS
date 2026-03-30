@@ -62,18 +62,14 @@ Work in progress.
 
 #### Installation 📲
 
-1. Clone the repository:
-<br>
-`git clone <your-repo-url>`
+1. Clone the repository: <br>
+`git clone <your-repo-url>` <br>
 `cd OlipraOS`
-2. Install the required dependencies:
-<br>
+2. Install the required dependencies: <br>
 `pip install flask`
-3. Run the application:
-<br>
+3. Run the application: <br>
 `python app.py`
-4. Open your browser and go to:
-<br>
+4. Open your browser and go to: <br>
 ` http://127.0.0.1:5000`
 
 ---
