@@ -50,6 +50,8 @@ def command():
                         result = file_content
             else:
                 result = "Path too deep (max folder/file)"
+    elif cmd == 'clear':
+        return jsonify({'clear': True})
     else:
         result = f"Unknown command: {cmd}"
 
