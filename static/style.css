@@ -4,18 +4,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font: bold 14px/1.5;
 }
-input {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-}
-input:focus {
-        outline: none;
-        caret-color: #fff;
-}
 #terminal {
     background-color: #222;
     padding: 10px;
@@ -26,6 +14,11 @@ input:focus {
     flex-direction: column;
     justify-content: space-between;
 }
+#output-area {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
 #output {
     flex-grow: 1;
     margin-bottom: 10px;
@@ -35,15 +28,12 @@ input:focus {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     white-space: pre-wrap;
 }
-#input {
-    margin-top: auto;
-}
 #kropki {
     display: flex;
     justify-content: flex-start;
     gap: 5px;
     align-items: left;
-    padding: 10px
+    margin: 10px
 }
 #kropka1, #kropka2, #kropka3 {
     width: 20px;
@@ -61,4 +51,45 @@ input:focus {
 #kropka3 {
     background-color: #27c93f;
     cursor: pointer;
+}
+#input-area {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #555;
+    border-radius: 10px;
+}
+#input {
+    flex: 1;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 12px 45px 12px 12px;
+    border-radius: 4px;
+    margin: 5px;
+}
+#input:focus {
+        outline: none;
+        caret-color: #fff;
+}
+#submit {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: ease-in-out 0.25s;
+}
+#submit:hover {
+    box-shadow: 0 0 5px #fff;
+}
+svg {
+    background: transparent;
 }

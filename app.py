@@ -19,13 +19,13 @@ def command():
     cmd = data.get('cmd', '').strip()
 
     if cmd == 'help':
-        result = "Available commands: help, ls, cat <file>, clear, echo <message>"
+        result = "Available commands: help, ls, cat &lt;file&gt;, clear, echo &lt;message&gt;"
     elif cmd == 'ls':
         result = " ".join(fs.keys())
     elif cmd.startswith('cat '):
         parts = cmd.split(maxsplit=1)
         if len(parts) < 2 or not parts[1].strip():
-            result = "Usage: cat <file> or <folder/file>"
+            result = "Usage: cat &lt;file&gt; or &lt;folder/file&gt;"
         else:
             path = [p for p in parts[1].split('/') if p]
             if len(path) == 1:
@@ -53,9 +53,9 @@ def command():
     elif cmd == 'clear':
         return jsonify({'clear': True})
     elif cmd == 'echo':
-        result = "Usage: echo <message>"
+        result = "Usage: echo &lt;message&gt;"
     elif cmd.startswith('echo '):
-        result = cmd[5:].strip()
+        result = cmd[5:].strip() + ''
     else:
         result = f"Unknown command: {cmd}"
 

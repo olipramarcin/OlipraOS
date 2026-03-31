@@ -8,18 +8,25 @@
     <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
-    
     <div id="terminal">
-        <div id="kropki">
-            <div id="kropka1"></div>
-            <div id="kropka2"></div>
-            <div id="kropka3"></div>
+        <div id="output-area">
+            <div id="kropki">
+                <div id="kropka1"></div>
+                <div id="kropka2"></div>
+                <div id="kropka3"></div>
         </div>
-        
-        <div id="output">OlipraOS Terminal v0.1 <br>Type 'help' to start.</div>
-        <input type="text" id="input" placeholder="Type a command..." autocomplete="off">
+        <div id="output">OlipraOS Terminal v0.1 <br>Type 'help' to start.<br></div>
+    </div>
+    <div id="input-area">
+            <input type="text" id="input" placeholder="Type a command..." autocomplete="off">
+            <button id="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#555" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+                </svg>
+            </button>
     </div>
 
+    </div>
     <script src="../static/script.js"></script>
 
 </body>
