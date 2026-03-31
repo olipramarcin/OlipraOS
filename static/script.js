@@ -16,7 +16,12 @@ const input = document.getElementById('input');
                     body: JSON.stringify({ cmd: command })
                 });
                 const data = await response.json();
+
+                if (data.clear) {
+                    output.innerHTML = "OlipraOS Terminal v0.1 <br>Type 'help' to start.";
+                } else {
                 output.textContent += data.result + '\n';
                 output.scrollTop = output.scrollHeight;
+                }
                 }
             });
