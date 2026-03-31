@@ -19,7 +19,7 @@ def command():
     cmd = data.get('cmd', '').strip()
 
     if cmd == 'help':
-        result = "Available commands: help, ls, cat <file>"
+        result = "Available commands: help, ls, cat <file>, clear, echo <message>"
     elif cmd == 'ls':
         result = " ".join(fs.keys())
     elif cmd.startswith('cat '):
@@ -52,6 +52,10 @@ def command():
                 result = "Path too deep (max folder/file)"
     elif cmd == 'clear':
         return jsonify({'clear': True})
+    elif cmd == 'echo':
+        result = "Usage: echo <message>"
+    elif cmd.startswith('echo '):
+        result = cmd[5:].strip()
     else:
         result = f"Unknown command: {cmd}"
 
