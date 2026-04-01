@@ -9,6 +9,8 @@ fs = {
     "Downloads": {"file1.zip": "This is a zip file.", "file2.zip": "This is another zip file."}
 }
 
+allowed_colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black', 'reset']
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -19,7 +21,7 @@ def command():
     cmd = data.get('cmd', '').strip()
 
     if cmd == 'help':
-        result = "Available commands: help, ls, cat &lt;file&gt;, clear, echo &lt;message&gt;"
+        result = "Available commands: help, ls, cat &lt;file&gt;, clear, echo &lt;message&gt;, color &lt;name&gt;, color list, color reset"
     elif cmd == 'ls':
         result = " ".join(fs.keys())
     elif cmd.startswith('cat '):
@@ -30,7 +32,7 @@ def command():
             path = [p for p in parts[1].split('/') if p]
             if len(path) == 1:
                 file_name = path[0]
-                file_content = fs.get(file_name, None)
+                file_content = fs.get(file_name)
                 if file_content is None:
                     result = f"No such file: {file_name}"
                 elif isinstance(file_content, dict):
@@ -39,7 +41,7 @@ def command():
                     result = file_content
             elif len(path) == 2:
                 folder_name, file_name = path
-                folder_dict = fs.get(folder_name, None)
+                folder_dict = fs.get(folder_name)
                 if folder_dict is None or not isinstance(folder_dict, dict):
                     result = f"No such folder: {folder_name}"
                 else:
@@ -55,7 +57,18 @@ def command():
     elif cmd == 'echo':
         result = "Usage: echo &lt;message&gt;"
     elif cmd.startswith('echo '):
-        result = cmd[5:].strip() + ''
+        result = cmd[5:].strip()
+    elif cmd.startswith('color '):
+        parts = cmd.split(maxsplit=1)
+        color_name = parts[1].strip().lower()
+        if color_name == 'list':
+            result = "Available colors: " + ", ".join([c for c in allowed_colors if c != 'reset'])
+        elif color_name == 'reset':
+            result = "<color:reset>Color reset to default"
+        elif color_name in allowed_colors:
+            result = f"<color:{color_name}>Color changed to {color_name}"
+        else:
+            result = f"Unknown color: {color_name}. Type 'color list' to see available colors."
     else:
         result = f"Unknown command: {cmd}"
 
